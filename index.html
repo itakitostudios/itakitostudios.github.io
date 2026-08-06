@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itakito Studios | Projects</title>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        /* Navbar */
+        nav {
+            width: 100%;
+            background-color: #1e293b;
+            border-bottom: 1px solid #334155;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+        .nav-logo {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .nav-links a {
+            color: #0f172a;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 6px;
+            background-color: #38bdf8;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        .nav-links a:hover {
+            background-color: #7dd3fc;
+            transform: scale(1.05);
+        }
+        .discord-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            padding: 6px;
+            border-radius: 6px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .discord-btn:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            transform: scale(1.1);
+        }
+        .discord-icon {
+            width: 26px;
+            height: 26px;
+            object-fit: contain;
+        }
+        /* Header */
+        header {
+            text-align: center;
+            margin: 120px 20px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+        .header-title-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .header-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #38bdf8;
+            animation: pulseGlow 3s infinite;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: #38bdf8;
+        }
+        header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        /* Cards Container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            width: 90%;
+            max-width: 900px;
+            margin: 30px 0;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        .card {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 25px;
+            width: 340px;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s, box-shadow 0.3s;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.2);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #f1f5f9;
+            font-size: 1.4rem;
+        }
+        .card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #0369a1;
+            color: #e0f2fe;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 9px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        .btn-spigot {
+            background-color: #f97316;
+            color: #fff;
+        }
+        .btn-spigot:hover {
+            background-color: #ea580c;
+            transform: scale(1.02);
+        }
+        .btn-modrinth {
+            background-color: #10b981;
+            color: #fff;
+        }
+        .btn-modrinth:hover {
+            background-color: #059669;
+            transform: scale(1.02);
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            color: #64748b;
+            font-size: 0.9rem;
+            animation: fadeIn 1s ease-out;
+        }
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(56, 189, 248, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-brand">
+            <img src="logo.png" alt="Itakito Studios Logo" class="nav-logo">
+            Itakito Studios
+        </div>
+        <div class="nav-right">
+            <a href="https://discord.gg/rsz2bJ4Z5c" target="_blank" class="discord-btn" title="Join Discord">
+                <img src="discord.png" alt="Discord" class="discord-icon">
+            </a>
+            <div class="nav-links">
+                <a href="#projects">Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="projects">
+        <div class="header-title-container">
+            <img src="logo.png" alt="Itakito Studios Logo" class="header-logo">
+            <h1>Itakito Studios</h1>
+        </div>
+        <p>Minecraft Plugins and Professional Software Development</p>
+    </header>
+
+    <!-- Projects Container -->
+    <div class="container">
+        <!-- Project 1: WelcomePlugin -->
+        <div class="card">
+            <div>
+                <span class="tag">Minecraft Plugin</span>
+                <h3>WelcomePlugin v2.0</h3>
+                <p>Optimized plugin for version 1.21 that welcomes users with custom titles, subtitles, and configurable chat messages with live reload.</p>
+            </div>
+            <div class="btn-group">
+                <a href="https://www.spigotmc.org/resources/welcometittle-%C2%A1the-minecraft-customizable-tittle.137698/" target="_blank" class="btn btn-spigot">Get in Spigot</a>
+                <a href="https://modrinth.com/plugin/welcometittle-the-minecraft-customizable-tittle" target="_blank" class="btn btn-modrinth">Get in Modrinth</a>
+            </div>
+        </div>
+
+        <!-- Project 2: CommandGuard -->
+        <div class="card">
+            <div>
+                <span class="tag">Minecraft Plugin</span>
+                <h3>CommandGuard</h3>
+                <p>Advanced security system for servers that blocks prohibited commands and hides tab-completion to protect server configuration and security.</p>
+            </div>
+            <div class="btn-group">
+                <a href="https://www.spigotmc.org/resources/commandguard-the-minecraft-blocker-commands.137721/" target="_blank" class="btn btn-spigot">Get in Spigot</a>
+                <a href="https://modrinth.com/plugin/commandguard-blocker" target="_blank" class="btn btn-modrinth">Get in Modrinth</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Created with style and smooth animations
+    </footer>
+
+</body>
+</html>
