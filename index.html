@@ -169,7 +169,10 @@
             margin-top: 15px;
         }
         .btn {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             text-align: center;
             padding: 9px 16px;
             border-radius: 6px;
@@ -177,6 +180,11 @@
             font-weight: bold;
             font-size: 0.9rem;
             transition: background-color 0.2s, transform 0.2s;
+        }
+        .btn svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
         }
         .btn-spigot {
             background-color: #f97316;
@@ -258,8 +266,14 @@
                 <p>Optimized plugin for version 1.21 that welcomes users with custom titles, subtitles, and configurable chat messages with live reload.</p>
             </div>
             <div class="btn-group">
-                <a href="https://www.spigotmc.org/resources/welcometittle-%C2%A1the-minecraft-customizable-tittle.137698/" target="_blank" class="btn btn-spigot">Get in Spigot</a>
-                <a href="https://modrinth.com/plugin/welcometittle-the-minecraft-customizable-tittle" target="_blank" class="btn btn-modrinth">Get in Modrinth</a>
+                <a href="https://www.spigotmc.org/resources/welcometittle-%C2%A1the-minecraft-customizable-tittle.137698/" target="_blank" class="btn btn-spigot">
+                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5zm0 2.31 6.5 3.61-6.5 3.61-6.5-3.61L12 4.31zM5 9.06l6 3.33v6.75l-6-3.33V9.06zm8 10.08v-6.75l6-3.33v6.75l-6 3.33z"/></svg>
+                    Get in Spigot
+                </a>
+                <a href="https://modrinth.com/plugin/welcometittle-the-minecraft-customizable-tittle" target="_blank" class="btn btn-modrinth">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+                    Get in Modrinth
+                </a>
             </div>
         </div>
 
@@ -271,8 +285,14 @@
                 <p>Advanced security system for servers that blocks prohibited commands and hides tab-completion to protect server configuration and security.</p>
             </div>
             <div class="btn-group">
-                <a href="https://www.spigotmc.org/resources/commandguard-the-minecraft-blocker-commands.137721/" target="_blank" class="btn btn-spigot">Get in Spigot</a>
-                <a href="https://modrinth.com/plugin/commandguard-blocker" target="_blank" class="btn btn-modrinth">Get in Modrinth</a>
+                <a href="https://www.spigotmc.org/resources/commandguard-the-minecraft-blocker-commands.137721/" target="_blank" class="btn btn-spigot">
+                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5zm0 2.31 6.5 3.61-6.5 3.61-6.5-3.61L12 4.31zM5 9.06l6 3.33v6.75l-6-3.33V9.06zm8 10.08v-6.75l6-3.33v6.75l-6 3.33z"/></svg>
+                    Get in Spigot
+                </a>
+                <a href="https://modrinth.com/plugin/commandguard-blocker" target="_blank" class="btn btn-modrinth">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+                    Get in Modrinth
+                </a>
             </div>
         </div>
     </div>
